@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+	   <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+        <center><h1>WoolWorths</h1></center>
+        <div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <div class="dropdown">
+    <button class="dropbtn">More
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="shops.html">Shops</a>
+      <a href="movies.html">Movies</a>
+      <a href="contact.html">Contact</a>
+      <a href="map.html">Map</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+  <div class="mySlides">
+    <div class="numbertext">1 / 4</div>
+      <img src="images/Woolworths-Logo.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 4</div>
+      <img src="images/WW%201.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 4</div>
+      <img src="images/WW%202.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 4</div>
+      <img src="images/WW%203.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/Woolworths-Logo.png" style="width:100%" onclick="currentSlide(1)" alt="The Store">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/WW%201.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/WW%202.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/WW%203.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+    </div>
+  </div>
+</div>
+        <center><h2>Information</h2></center>
+        <b><p>Woolworths Holdings Limited is a South Africa-based multinational retail company that owns the South African retail chain Woolworths, and Australian retailers David Jones and Country Road Group. Woolworths, however, has no association to Australia's Woolworths supermarket chain.</p></b>
+        <br>
+        <h2>Trading Hour</h2>
+        <table>
+    <tr><th>Sunday</th><td>Closed</td></tr>
+    <tr><th>Monday</th><td>9am - 2pm<br>pm - 7pm</td></tr>
+    <tr><th>Tuesday</th><td>9am - 2pm<br>3pm - 7pm</td></tr>
+    <tr><th>Wednesday</th><td>9am - 2pm<br>3pm - 7pm</td></tr>
+    <tr><th>Thursday</th><td>9am - 2pm<br>3pm - 7pm</td></tr>
+</table>
+	</body>
+    <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+    </script>
+</html>
